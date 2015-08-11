@@ -1,0 +1,108 @@
+﻿<script type="text/javascript">
+    $(function () {
+        $('#form-login').submit(function () {
+            var user = $('#username-login').val().toString();
+            var password = $('#password-login').val().toString();
+            var db = openDatabase('db_nestpockets', '1.0', 'storage admin corporate', 2 * 1024 * 1024);
+            db.transaction(function (tx) {
+                tx.executeSql('SELECT *FROM user WHERE username=? AND password=?', [user, password], function (tx, result) {
+                    var count = result.rows.length;
+                    if (count == 1) {
+                        localStorage['user'] = result.rows.item(0).username;
+                        localStorage['userType'] = result.rows.item(0).userType;
+                        location.href = "home.html";
+                    } else {
+                        $('.alert.alert-warning').removeClass('hidden');
+                        clearText();
+                        setTimeout(setTimes, 2000);
+                    }
+                });
+            });
+            return false;
+        });
+
+        function clearText() {
+            $('#form-login').each(function () {
+                $(this).find(':input').val("");
+            });
+        }
+        function setTimes() {
+            $('.alert.alert-warning').addClass('hidden');
+        }
+    });
+</script>
+<link rel="stylesheet" href="../css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+<style type="text/css">
+    .nestpocket {
+        font-family: 'PT Sans Caption', sans-serif;
+        font-weight: bold;
+        letter-spacing: 0;
+        color: #ff220c;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <div class="row text-center" id="login-form">
+                <div class="container-fluid">
+                    <p class="alert alert-warning hidden"
+                       style="padding-top: 1px;padding-bottom: 1px;margin-top: -10px;border-radius:0">
+                        username or password invalid
+                    </p>
+                    <div class="content">
+                        <svg viewBox="0 0 600 300" style="margin-bottom:0">
+                            <symbol id="s-text">
+                                <text text-anchor="middle" x="50%" y="50%" dy=".35em">
+                                    NP
+                                </text>
+                            </symbol>
+                            <symbol id="s-text">
+                                <text text-anchor="middle" x="100%" y="50%" dy=".35em">
+                                    NestPocket
+                                </text>
+                            </symbol>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                        </svg>
+                    </div>
+
+                    <!--<h1 class="animated slideInUp visible-lg nestpocket"
+                        style="margin-top:5px;margin-bottom:10px;">
+                        Nest Pocket
+                    </h1>
+                    <h3 class="animated slideInUp visible-md visible-sm nestpocket"
+                        style="margin-top:5px;margin-bottom:10px">
+                        Nest Pocket
+                    </h3>
+                    <h4 class="animated slideInUp visible-xs nestpocket"
+                        style="margin-top:5px;margin-bottom:10px">
+                        Nest Pocket
+                    </h4>-->
+                    <form role="form" class="form-horizontal" id="form-login">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username-login"
+                                   placeholder="username or email" pattern="[a-zA-Z]{2,}" required />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="password-login" type="password"
+                                   placeholder="password" pattern="[a-zA-Z0-9]{2,}" required />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Log In</button>
+                        </div>
+                        <div class="form-group">
+                            <a href="../forgot-password/forgot.html" class="text-info">Forgot your password</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="clearfix"></footer>

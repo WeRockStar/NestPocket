@@ -1,0 +1,158 @@
+
+@font-face {
+    font-family: 'NotoSans';
+    src: url('NotoSans.eot');
+    src: url('NotoSans.eot?#iefix') format('embedded-opentype'), url('NotoSans.woff') format('woff'), url('NotoSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.btn-primary {
+    background-color: #3b5998;
+    width: 100%;
+    padding: 7px;
+    border: 0;
+    font-size: 1.2em;
+}
+
+    .btn-primary:hover {
+        border: 10px;
+    }
+
+.nestpocket {
+    color: #000000;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+#login-form {
+    background-color: #fff;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+    border: 0;
+    margin-top: 120px;
+    padding: 10px 40px 10px 40px;
+}
+
+h1 {
+    font-family: NotoSans, 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 4em;
+    letter-spacing: 0;
+}
+
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+.breadcrumb {
+    background-color: #fff;
+}
+
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #d2d6de;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color: #d0c7c7 !important;
+    font-weight: bold !important;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+footer {
+    margin-top: 130px;
+    left: 0;
+    bottom: 0;
+    position: relative;
+    min-height: 90px;
+    background-color: #333;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.footer-text {
+    color: #fff;
+    font-size: 1em;
+    padding-top: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+footer .site-map {
+    color: #fff;
+    padding-top: 5px;
+}
+
+footer ul li {
+    color: #fff;
+    list-style: none;
+}
+
+footer ul {
+    padding-left: 0;
+}
+
+.nav-tabs > ul li {
+    border-radius: 0;
+}
+
+hr {
+    border-bottom: 0.1px;
+    opacity: 0.7;
+    border-color: #333;
+    border-style: solid;
+}
+
+.fa {
+    color: #fff;
+}
+
+.link-footer > i:hover {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    color: #81f8be;
+    font-weight: 200;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    /*background-color: #7ce9fc !important;
+    font-weight: bold !important;*/
+}
+
+.glyphicon-chevron-up, .glyphicon-chevron-down {
+    color: #d0c7c7;
+    font-size: 12px !important;
+    margin-left: 2px;
+}
+
+a {
+    cursor: pointer;
+}
+
+#forgot-form {
+    background-color: #fff;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+    border: 0;
+    margin-top: 140px;
+    padding: 10px 30px 10px 30px;
+}
